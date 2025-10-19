@@ -117,106 +117,22 @@ alert(`Your amount due with discount is ${sumWithDiscount} golden coins`);
 
 
 alert("Think of a number from 1 to 100. Let me guess it.");
-let reply1 = confirm("Is your number bigger than 50?");
-let userNumber = "lower than I expected";
-if (reply1) {
-  if (confirm("Is your number bigger than 75?")) {
-    if (confirm("Is your number bigger than 88?")) {
-      if (confirm("Is your number bigger than 94?")) {
-        if (confirm("Is your number bigger than 97?")) {
-          if (confirm("Is your number bigger than 99?")) {
-            userNumber = 100;
-          } else {
-            userNumber = confirm("Is your number bigger than 98?") ? 99 : 98;
-          }
-        } else if (confirm("Is your number bigger than 96?")) {
-          userNumber = 97;
-        } else {
-          userNumber = confirm("Is your number bigger than 95?") ? 96 : 95;
-        }
-      } else if (confirm("Is your number bigger than 91?")) {
-        if (confirm("Is your number bigger than 93?")) {
-          userNumber = 94;
-        } else {
-          userNumber = confirm("Is your number bigger than 92?") ? 93 : 92;
-        }
-      } else if (confirm("Is your number bigger than 90?")) {
-        userNumber = 91;
-      } else {
-        userNumber = confirm("Is your number bigger than 89?") ? 90 : 89;
-      }
-    } else if (confirm("Is your number bigger than 81?")) {
-      if (confirm("Is your number bigger than 84?")) {
-        if (confirm("Is your number bigger than 86?")) {
-          userNumber = confirm("Is your number bigger than 87?") ? 88 : 87;
-        } else {
-          userNumber = confirm("Is your number bigger than 85?") ? 86 : 85;
-        }
-      } else if (confirm("Is your number bigger than 83?")) {
-        userNumber = 84;
-      } else {
-        userNumber = confirm("Is your number bigger than 82?") ? 83 : 82;
-      }
-    } else if (confirm("Is your number bigger than 78?")) {
-      if (confirm("Is your number bigger than 80?")) {
-        userNumber = 81;
-      } else {
-        userNumber = confirm("Is your number bigger than 79?") ? 80 : 79;
-      }
-    } else if (confirm("Is your number bigger than 77?")) {
-      userNumber = 78;
-    } else {
-      userNumber = confirm("Is your number bigger than 76?") ? 77 : 76;
-    }
-  } else if (confirm("Is your number bigger than 63?")) {
-    if (confirm("Is your number bigger than 69?")) {
-      if (confirm("Is your number bigger than 72?")) {
-        if (confirm("Is your number bigger than 73?")) {
-          userNumber = 74;
-        } else {
-          userNumber = confirm("Is your number bigger than 72?") ? 73 : 72;
-        }
-      } else if (confirm("Is your number bigger than 71?")) {
-        userNumber = 72;
-      } else {
-        userNumber = confirm("Is your number bigger than 70?") ? 71 : 70;
-      }
-    } else if (confirm("Is your number bigger than 66?")) {
-      if (confirm("Is your number bigger than 68?")) {
-        userNumber = 69;
-      } else {
-        userNumber = confirm("Is your number bigger than 67?") ? 68 : 67;
-      }
-    } else if (confirm("Is your number bigger than 65?")) {
-      userNumber = 66;
-    } else {
-      userNumber = confirm("Is your number bigger than 64?") ? 65 : 64;
-    }
-  } else if (confirm("Is your number bigger than 57?")) {
-    if (confirm("Is your number bigger than 60?")) {
-      if (confirm("Is your number bigger than 62?")) {
-        userNumber = 63;
-      } else {
-        userNumber = confirm("Is your number bigger than 61?") ? 62 : 61;
-      }
-    } else if (confirm("Is your number bigger than 59?")) {
-      userNumber = 60;
-    } else {
-      userNumber = confirm("Is your number bigger than 58?") ? 59 : 58;
-    }
-  } else if (confirm("Is your number bigger than 54?")) {
-    if (confirm("Is your number bigger than 56?")) {
-      userNumber = 57;
-    } else {
-      userNumber = confirm("Is your number bigger than 55?") ? 56 : 55;
-    }
-  } else if (confirm("Is your number bigger than 52?")) {
-    userNumber = confirm("Is your number bigger than 53?") ? 54 : 53;
-  } else {
-    userNumber = confirm("Is your number bigger than 51?") ? 52 : 51;
-  }
-} else {
-  alert("Think of number bigger than 50");
-}
+let minNumber =0;
+let maxNumber = 100;
 
-alert(`Your number is ${userNumber}`);
+while (minNumber != maxNumber) {
+  let guessNumber = Math.floor((minNumber + maxNumber) / 2)
+  let reply = prompt(`Is your number > ${guessNumber}, = ${guessNumber} or < ${guessNumber}`)
+  if (reply === '>') {
+    minNumber = guessNumber
+  } else if (reply === "="){
+    alert(`Your number is ${guessNumber}`)
+    break;
+  } else if (reply === '<'){
+    maxNumber = guessNumber
+  } else if (reply == null){
+    break;
+  } else {
+    alert(`Enter > = or <`)
+  }
+}
