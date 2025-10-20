@@ -21,6 +21,15 @@ const compareNum = function (num1, num2) {
 console.log(compareNum(45, "t"));
 console.log(compareNum(-5, 0));
 
+function factorial(num) {
+  if (num < 0) {
+    console.log("Факторіал можна визначити лише для невід'ємних чисел.");
+  }
+  return num === 0 ? 1 : num * factorial(num - 1);
+}
+
+console.log(factorial(5));
+
 const joinNums = (...args) => args.join('')
 
 console.log(joinNums(3, 45, 76));
