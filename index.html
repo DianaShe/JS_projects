@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button class="btn btn_post" id="btn-add-post">Add post</button>
+    <input
+      type="number"
+      class="amount"
+      placeholder="Amount posts"
+      id="amount_post"
+    />
+    <section class="posts" id="posts"></section>
+    <input
+      type="text"
+      placeholder="Enter film title"
+      id="search"
+    />
+    <select name="type" id="type">
+        <option value="movie">movie</option>
+        <option value="series">series</option>
+        <option value="episode">episode</option>
+    </select>
+    <button class="btn" id="btn-search-films">Find films</button>
+    
+    <ul class="films" id="films"></ul>
+    
+    <script src="index.js"></script>
+    <script src="films.js"></script>
+  </body>
+</html>
